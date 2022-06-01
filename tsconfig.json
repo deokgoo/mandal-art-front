@@ -19,6 +19,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "node_modules/@types/puppeteer/index.d.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "node_modules/@types/puppeteer/index.d.ts", "e2e/puppeteer_environment.js_/test.js"],
   "exclude": ["node_modules"]
 }
