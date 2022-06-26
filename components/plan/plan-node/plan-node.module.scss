@@ -1,0 +1,41 @@
+$node-size: 128px;
+
+.planNode {
+  width: $node-size * 9;
+  height: $node-size * 9;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.middleNode {
+  width: $node-size * 3;
+  height: $node-size * 3;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.smallNode {
+  width: $node-size;
+  height: $node-size;
+  border: 1px solid white;
+  box-sizing: border-box;
+  background-color: plum;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .insertBox {
+    max-width: 100%;
+    max-height: 100%;
+    border: none;
+    outline: none;
+    background-color: plum;
+    font-size: 16px;
+    overflow: hidden;
+
+    &:hover {
+      border: none;
+      outline: none;
+    }
+  }
+}

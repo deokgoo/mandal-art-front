@@ -1,6 +1,10 @@
-import * as React from 'react'
+import * as React from 'react';
+import { PlanData } from 'types/plan';
+import styles from './plan-node.module.scss';
 
-const PlanContext = React.createContext(null);
+const PlanContext = React.createContext<{ planData: PlanData|null }>({
+  planData: null,
+});
 
 function useEffectAfterMount(cb: any, dependencies: any[]) {
   const justMounted = React.useRef(true)
@@ -13,46 +17,44 @@ function useEffectAfterMount(cb: any, dependencies: any[]) {
   }, [cb, ...dependencies])
 }
 
-function PlanNode(props: any) {
-  const [on, setOn] = React.useState(false)
-  // const toggle = React.useCallback(() => setOn(oldOn => !oldOn), [])
-  useEffectAfterMount(() => {
-    props.onToggle(on)
-  }, [on])
-  // const value = React.useMemo(() => ({on, toggle}), [on])
+const PlanNode = ({ planData, children }: { planData: PlanData, children: JSX.Element|JSX.Element[] }) => {
   return (
-    <PlanContext.Provider value={null}>
-      {props.children}
+    <PlanContext.Provider value={{planData}}>
+      <div className={styles.planNode}>
+        {children}
+      </div>
     </PlanContext.Provider>
   )
 }
 
-function usePlanNodeContext() {
-  const context = React.useContext(PlanContext)
+const usePlanNodeContext = (): { planData: PlanData|null } => {
+  const context = React.useContext(PlanContext);
+
   if (!context) {
     throw new Error(
-      `Toggle compound components cannot be rendered outside the Toggle component`,
+      `compound components cannot be rendered outside the PlanNode`,
     )
   }
+
   return context
 }
 
-function Middle({no, children}: {no: number, children: React.ReactElement}) {
-  const {on} = usePlanNodeContext()
-  return <></>
+function Middle({pos, children}: {pos: number, children: JSX.Element|JSX.Element[]}) {
+  const planNodeContext = usePlanNodeContext();
+
+  return <div className={styles.middleNode}>
+    {children}
+  </div>
 }
 
-function Small({no}: {no: number}) {
-  const {on} = usePlanNodeContext()
-  return <></>
+function Small({pos}: {pos: number}) {
+  const planNodeContext = usePlanNodeContext();
+
+  return <div className={styles.smallNode}>
+    <div className={styles.insertBox} contentEditable="true" />
+  </div>
 }
 
-// function Button(props) {
-//   const {on, toggle} = useToggleContext()
-//   return <Switch on={on} onClick={toggle} {...props} />
-// }
-
-// for convenience, but totally not required...
 PlanNode.middle = Middle
 PlanNode.small = Small
 
