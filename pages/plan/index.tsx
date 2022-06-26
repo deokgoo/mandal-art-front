@@ -1,52 +1,36 @@
-import { useEffect, useMemo, useState } from 'react';
-import PlanNode from '@/components/plan/plan-node';
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import type { PlanData } from 'types/plan';
 import { initialPlanData } from '@/utils/constant';
+import { useRecoilState } from 'recoil';
+import MiddlePlanUnit, { Props as MiddleProps } from '@/components/plan/plan-unit/middle-plan-unit';
+import planAtom from 'stores/planAtom';
+import styles from '@/components/plan/plan-unit/plan-unit.module.scss';
 
-interface Props {
-  fetchedPlanData: PlanData;
-}
+const Plan = () => {
+  const [plan, setPlan] = useRecoilState(planAtom);
 
-const Plan = ({ fetchedPlanData }: Props) => {
-  const [planData, setPlanData] = useState<PlanData>(fetchedPlanData);
-
-  useEffect(() => {
-    console.log(fetchedPlanData);
-  }, [fetchedPlanData]);
-
-  useEffect(()=> {
-
-  }, []);
-
-  const createSmallNode = useMemo(() => {
-    const smallNodes: JSX.Element[] = [];
-
-    Object.keys(planData).forEach((_, idx) => {
-      smallNodes.push(<PlanNode.small pos={idx} />);
-    });
-
-    return smallNodes;
-  }, [planData]);
-
-  const createMiddleNode = useMemo(() => {
-    const middleNodes: JSX.Element[] = [];
-
-    Object.keys(planData).forEach((_, idx) => {
-      middleNodes.push(
-        <PlanNode.middle pos={idx}>
-          {createSmallNode}
-        </PlanNode.middle>
-      );
-    });
-
-    return middleNodes;
-  }, [createSmallNode, planData]);
-
-  return <>
-    <PlanNode planData={planData}>
-      {createMiddleNode}
-    </PlanNode>
-  </>
+  const planData = (pos: number): MiddleProps => {
+    return {
+      planData: plan[pos],
+      pos,
+    };
+  };
+  
+  return (
+    <Suspense>
+      <div className={styles.planNode}>
+        <MiddlePlanUnit {...planData(0)}/>
+        <MiddlePlanUnit {...planData(1)}/>
+        <MiddlePlanUnit {...planData(2)}/>
+        <MiddlePlanUnit {...planData(3)}/>
+        <MiddlePlanUnit {...planData(4)}/>
+        <MiddlePlanUnit {...planData(5)}/>
+        <MiddlePlanUnit {...planData(6)}/>
+        <MiddlePlanUnit {...planData(7)}/>
+        <MiddlePlanUnit {...planData(8)}/>
+      </div>
+    </Suspense>
+  )
 }
 
 export const getServerSideProps = () => {

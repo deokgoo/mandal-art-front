@@ -1,4 +1,14 @@
-import type { PlanData } from '../types/plan';
+import type { ColorPlanNode, PlanData } from '../types/plan';
+
+export const ColorTheme: {[key in ColorPlanNode]: string} = {
+  default: 'white',
+  pink: 'pink',
+  pink1: '#edb9ec',
+  red: 'red',
+  grey: 'grey',
+  yellow: 'yellow',
+  blue: 'blue'
+}
 
 export const initialPlanData: PlanData = {
   0: {
@@ -20,7 +30,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     5: {
       title: "",
@@ -58,7 +68,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     5: {
       title: "",
@@ -96,7 +106,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     5: {
       title: "",
@@ -134,7 +144,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     5: {
       title: "",
@@ -156,39 +166,39 @@ export const initialPlanData: PlanData = {
   4: {
     0: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     1: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     2: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     3: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     4: {
       title: "",
-      color: "default",
+      color: "pink",
     },
     5: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     6: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     7: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     8: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
   },
   5: {
@@ -210,7 +220,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     5: {
       title: "",
@@ -248,7 +258,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     5: {
       title: "",
@@ -286,7 +296,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     5: {
       title: "",
@@ -324,7 +334,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "default",
+      color: "pink1",
     },
     5: {
       title: "",
