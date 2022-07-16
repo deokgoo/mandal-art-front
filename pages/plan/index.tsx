@@ -17,19 +17,26 @@ const Plan = () => {
   };
   
   return (
-    <Suspense>
-      <div className={styles.planNode}>
-        <MiddlePlanUnit {...planData(0)}/>
-        <MiddlePlanUnit {...planData(1)}/>
-        <MiddlePlanUnit {...planData(2)}/>
-        <MiddlePlanUnit {...planData(3)}/>
-        <MiddlePlanUnit {...planData(4)}/>
-        <MiddlePlanUnit {...planData(5)}/>
-        <MiddlePlanUnit {...planData(6)}/>
-        <MiddlePlanUnit {...planData(7)}/>
-        <MiddlePlanUnit {...planData(8)}/>
+    <div className="plan">
+      <div className="showcase">
+        <Suspense>
+          <div className={styles.planNode}>
+            <MiddlePlanUnit {...planData(0)} isVisible={true}/>
+            <MiddlePlanUnit {...planData(1)}/>
+            <MiddlePlanUnit {...planData(2)}/>
+            <MiddlePlanUnit {...planData(3)}/>
+            <MiddlePlanUnit {...planData(4)}/>
+            <MiddlePlanUnit {...planData(5)}/>
+            <MiddlePlanUnit {...planData(6)}/>
+            <MiddlePlanUnit {...planData(7)}/>
+            <MiddlePlanUnit {...planData(8)}/>
+          </div>
+        </Suspense>
       </div>
-    </Suspense>
+      <div className="controlBox">
+        
+      </div>
+    </div>
   )
 }
 

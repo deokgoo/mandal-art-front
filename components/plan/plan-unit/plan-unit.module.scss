@@ -14,6 +14,12 @@ $node-size: 84px;
   display: flex;
   flex-flow: wrap;
   box-sizing: border-box;
+  animation-duration: 0.6s;
+  animation-name: pop;
+}
+
+.unVisibile {
+  visibility: hidden;
 }
 
 .smallNode {
@@ -49,5 +55,15 @@ $node-size: 84px;
       border: none;
       outline: none;
     }
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(1);
   }
 }

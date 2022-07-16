@@ -10,9 +10,10 @@ export interface Props {
     [key: number]: PlanNode;
   }
   pos: number;
+  isVisible?: boolean;
 }
 
-const MiddlePlanUnit = ({ planData, pos }: Props) => {
+const MiddlePlanUnit = ({ planData, pos, isVisible = true }: Props) => {
   const [plan, setPlanAtom] = useRecoilState(planAtom);
 
   const onChangeHandler = (childPos: number, title: string, color: ColorPlanNode) => {
@@ -43,14 +44,14 @@ const MiddlePlanUnit = ({ planData, pos }: Props) => {
           4: {
             title,
             color,
-          }
+          },
         },
         4: {
           ...plan[4],
           [pos]: {
             title,
             color,
-          }
+          },
         },
       });
     } else {
@@ -61,8 +62,8 @@ const MiddlePlanUnit = ({ planData, pos }: Props) => {
           [childPos]: {
             title,
             color,
-          }
-        }
+          },
+        },
       });
     }
   };
@@ -76,7 +77,7 @@ const MiddlePlanUnit = ({ planData, pos }: Props) => {
     }
   };
 
-  return <div className={styles.middleNode}>
+  return <div className={`${styles.middleNode} ${isVisible?'':styles.unVisibile}`}>
     <SmallPlanUnit {...unitProps(0)} />
     <SmallPlanUnit {...unitProps(1)} />
     <SmallPlanUnit {...unitProps(2)} />
