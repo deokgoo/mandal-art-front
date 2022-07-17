@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mainContent {
+  min-width: 900px;
+  flex: 3 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .content {
+    box-sizing: border-box;
+  }
+}
+
+.sideContent {
+  flex: 1 1;
+}

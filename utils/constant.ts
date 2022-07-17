@@ -1,13 +1,13 @@
+import ControlData from 'types/control';
 import type { ColorPlanNode, PlanData } from '../types/plan';
 
 export const ColorTheme: {[key in ColorPlanNode]: string} = {
   default: 'white',
-  pink: 'pink',
-  pink1: '#edb9ec',
-  red: 'red',
+  'red-main': '#f1a198',
+  'red-sub': '#fcedeb',
   grey: 'grey',
   yellow: 'yellow',
-  blue: 'blue'
+  blue: 'blue',
 }
 
 export const initialPlanData: PlanData = {
@@ -30,7 +30,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     5: {
       title: "",
@@ -68,7 +68,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     5: {
       title: "",
@@ -106,7 +106,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     5: {
       title: "",
@@ -144,7 +144,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     5: {
       title: "",
@@ -166,39 +166,39 @@ export const initialPlanData: PlanData = {
   4: {
     0: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     1: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     2: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     3: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     4: {
       title: "",
-      color: "pink",
+      color: "red-main",
     },
     5: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     6: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     7: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     8: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
   },
   5: {
@@ -220,7 +220,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     5: {
       title: "",
@@ -258,7 +258,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     5: {
       title: "",
@@ -296,7 +296,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     5: {
       title: "",
@@ -334,7 +334,7 @@ export const initialPlanData: PlanData = {
     },
     4: {
       title: "",
-      color: "pink1",
+      color: "red-sub",
     },
     5: {
       title: "",
@@ -354,3 +354,8 @@ export const initialPlanData: PlanData = {
     },
   },
 };
+
+export const initialControlData: ControlData = {
+  selectedMiddlePos: 4,
+  selectedSmallPos: 4,
+}

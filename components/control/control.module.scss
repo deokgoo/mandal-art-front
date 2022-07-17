@@ -1,0 +1,57 @@
+@import '@/styles/color.module.scss';
+
+$node-size: 84px;
+
+.control {
+  height: 100%;
+  min-width: 360px;
+  padding: 45px;
+  background-color: $color-theme-red-sub;
+  display: flex;
+  flex-direction: column;
+
+  .showCase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+    .title{
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+    .box {
+      width: $node-size;
+      height: $node-size;
+      border: 1px solid black;
+      outline: none;
+      font-size: 16px;
+      white-space: normal;
+      text-align: justify;
+      -moz-text-align-last: center; /* Firefox 12+ */
+      text-align-last: center;
+      resize: none;
+      display:inline-block;
+      vertical-align:middle;
+      overflow: none;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+
+  .titleControl {
+    width: 100%;
+    display: flex;
+    font-size: 32px;
+    .label {
+      width: 120px;
+    }
+    .insert {
+      margin-left: 12px;
+      padding-left: 6px;
+      font-size: 24px;
+    }
+  }
+}

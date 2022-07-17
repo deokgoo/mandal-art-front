@@ -26,6 +26,7 @@ const SmallPlanUnit = ({ pos, title, color, handleOnChange }: Props) => {
       value={title}
       onChange={onChnageHandler}
       style={{backgroundColor: color === 'default' ? 'white' : ColorTheme[color ?? 'default']}}
+      readOnly={true}
     />
   </div>
 }

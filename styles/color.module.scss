@@ -1,0 +1,16 @@
+$color-theme-red-main: #f1a198;
+$color-theme-red-sub: #fcedeb;
+
+.bgDefault {
+  background-color: #fff;
+}
+
+.bgRedMain {
+  background-color: $color-theme-red-main;
+}
+
+.bgRedSub {
+  background-color: $color-theme-red-sub;
+}
+
+

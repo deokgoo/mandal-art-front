@@ -1,4 +1,4 @@
-export type ColorPlanNode = 'default' | 'red' | 'grey' | 'yellow' | 'blue' | 'pink' | 'pink1';
+export type ColorPlanNode = 'default' | 'red-main' | 'red-sub' | 'grey' | 'yellow' | 'blue';
 
 export interface PlanData {
   [corePosition: number]: PlanMiddleNode;
